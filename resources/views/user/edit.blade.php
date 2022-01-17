@@ -1,12 +1,12 @@
 @extends('layout.app')
+@section('title','edit user')
 
-
-@section('container')
+@section('content')
   <form action="{{route('user.update',$user->id)}}" method="POST">
         @csrf
         @method('PUT')
 
-        <div class="container form-group mb-3">
+        <div class=" form-group mb-3">
             <h1>Register</h1>
             <p>Please fill in this form to create an account.</p>
 
@@ -33,4 +33,4 @@
             <p>Already have an account? <a href="#">Sign in</a>.</p>
         </div>
     </form>
-   
+   @endsection

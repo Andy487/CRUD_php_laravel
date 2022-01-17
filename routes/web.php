@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ImportExport;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,7 @@ Route::get('/', function () {
 });
 
 Route::resource('user',UserController::class);
+
+Route::get('importExportView', [UserController::class, 'fileImportExport']);
+Route::get('export', [UserController::class, 'fileExport'])->name('fileExport');
+Route::post('import', [UserController::class, 'fileImport'])->name('fileImport');

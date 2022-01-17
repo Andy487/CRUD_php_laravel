@@ -1,6 +1,8 @@
 @extends('layout.app')
 
+@section('title','add user')
 
+@section('content')
     <form action="{{route('user.store')}}" method="POST">
         @csrf
         <div class="container form-group mb-3">
@@ -30,3 +32,4 @@
             <p>Already have an account? <a href="#">Sign in</a>.</p>
         </div>
     </form>
+    @endsection

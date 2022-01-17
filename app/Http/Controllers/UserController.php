@@ -20,12 +20,9 @@ class UserController extends Controller
     public function index()
     {
         //
-        // print_r("user.index");
-       
-        // return view('user.index');
         $user = Users::paginate(5);
-        return view('user.index',compact('user'));
-        // return view('user.index')->with('user',users::all());
+        // return view('user.index',compact('user'));
+        return view('user.index')->with('user');
        
     }
 

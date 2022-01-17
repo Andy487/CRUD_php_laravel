@@ -41,6 +41,7 @@
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
+                    @if(!empty($user) && $user->count())
                     @foreach($user as $item)
                     <tr>
                         <td scope="row">{{$item->id}}</td>
@@ -70,6 +71,11 @@
                             <a class="btn btn-secondary" href="{{route('user.show',$item->id)}}">Show</a>
                         </td>
                         @endforeach
+                        @else
+                <tr>
+                    <td colspan="10">There are no data.</td>
+                </tr>
+            @endif
                 </table>
             </div>
         </div>
